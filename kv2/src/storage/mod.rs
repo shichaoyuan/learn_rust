@@ -1,6 +1,8 @@
 mod memory;
+mod sleddb;
 
 pub use memory::MemTable;
+pub use sleddb::SledDb;
 
 use crate::{KvError, Kvpair, Value};
 
@@ -33,7 +35,7 @@ impl<T> StorageIter<T> {
 impl<T> Iterator for StorageIter<T>
 where
     T: Iterator,
-    T::Item: Into<Kvpair>
+    T::Item: Into<Kvpair>,
 {
     type Item = Kvpair;
 
@@ -44,6 +46,7 @@ where
 
 #[cfg(test)]
 mod tests {
+    use tempfile::tempdir;
     use super::*;
 
     #[test]
@@ -63,6 +66,28 @@ mod tests {
         let store = MemTable::new();
         test_get_iter(store);
     }
+    
+    #[test]
+    fn sleddb_basic_interface_should_work() {
+        let dir = tempdir().unwrap();
+        let store = SledDb::new(dir);
+        test_basi_interface(store);
+    }
+
+    #[test]
+    fn sleddb_get_all_should_work() {
+        let dir = tempdir().unwrap();
+        let store = SledDb::new(dir);
+        test_get_all(store);
+    }
+
+    #[test]
+    fn sleddb_iter_should_work() {
+        let dir = tempdir().unwrap();
+        let store = SledDb::new(dir);
+        test_get_iter(store);
+    }
+
 
     fn test_basi_interface(store: impl Storage) {
         // 第一次 set 会创建 table，插入 key 并返回 None（之前没值）
