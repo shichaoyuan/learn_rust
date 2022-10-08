@@ -28,6 +28,7 @@ macro_rules! show_size {
 }
 
 fn main() {
+    println!("{}", "-".repeat(64));
     show_size!(header);
     show_size!(u8);
     show_size!(f64);
