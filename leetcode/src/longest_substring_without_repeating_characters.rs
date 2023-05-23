@@ -1,5 +1,3 @@
-
-
 struct Solution;
 
 impl Solution {
@@ -10,7 +8,6 @@ impl Solution {
         let mut r = 0;
         let mut longest = 0;
 
-        
         let bytes = s.as_bytes();
         loop {
             if r >= bytes.len() {
@@ -25,7 +22,7 @@ impl Solution {
                 map.entry(b).and_modify(|c| *c -= 1);
                 l += 1;
             }
-            
+
             if r - l > longest {
                 longest = r - l;
             }
@@ -38,11 +35,10 @@ impl Solution {
 #[cfg(test)]
 mod test {
     use super::Solution;
-    
+
     #[test]
     fn test() {
         let r = Solution::length_of_longest_substring("abcabcbb".to_string());
         assert_eq!(3, r);
     }
-
 }
