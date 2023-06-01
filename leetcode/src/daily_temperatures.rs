@@ -1,4 +1,3 @@
-use std::arch::x86_64::_mm_test_mix_ones_zeros;
 
 struct Solution;
 
