@@ -7,6 +7,7 @@ mod two_sum;
 mod next_greater_element_i;
 mod next_greater_element_ii;
 mod palindromic_substrings;
+mod valid_palindrome;
 
 fn main() {
     println!("hello leetcode");
