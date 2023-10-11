@@ -8,6 +8,9 @@ mod next_greater_element_i;
 mod next_greater_element_ii;
 mod palindromic_substrings;
 mod valid_palindrome;
+mod combination_sum;
+mod combination_sum_ii;
+mod combination_sum_iii;
 
 fn main() {
     println!("hello leetcode");
