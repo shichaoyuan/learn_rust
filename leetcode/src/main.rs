@@ -11,6 +11,9 @@ mod valid_palindrome;
 mod combination_sum;
 mod combination_sum_ii;
 mod combination_sum_iii;
+mod contains_duplicate;
+mod contains_duplicate_ii;
+mod contains_duplicate_iii;
 
 fn main() {
     println!("hello leetcode");
