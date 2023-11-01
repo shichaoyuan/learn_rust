@@ -14,6 +14,8 @@ mod combination_sum_iii;
 mod contains_duplicate;
 mod contains_duplicate_ii;
 mod contains_duplicate_iii;
+mod jump_game;
+mod jump_game_ii;
 
 fn main() {
     println!("hello leetcode");
