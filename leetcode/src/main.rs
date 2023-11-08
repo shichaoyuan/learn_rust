@@ -16,6 +16,9 @@ mod contains_duplicate_ii;
 mod contains_duplicate_iii;
 mod jump_game;
 mod jump_game_ii;
+mod non_overlapping_intervals;
+mod minimum_number_of_arrows_to_burst_balloons;
+mod video_stitching;
 
 fn main() {
     println!("hello leetcode");
