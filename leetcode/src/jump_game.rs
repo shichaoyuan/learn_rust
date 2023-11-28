@@ -1,4 +1,3 @@
-
 struct Solution;
 
 impl Solution {
@@ -7,8 +6,8 @@ impl Solution {
         let mut maxIndex: usize = 0;
         for (i, n) in nums.into_iter().enumerate() {
             if i <= maxIndex {
-                maxIndex = maxIndex.max(i+(n as usize));
-                if maxIndex >= (len-1) {
+                maxIndex = maxIndex.max(i + (n as usize));
+                if maxIndex >= (len - 1) {
                     return true;
                 }
             }
@@ -23,10 +22,8 @@ mod test {
 
     #[test]
     fn test() {
-
-        let nums = vec![2,3,1,1,4];
+        let nums = vec![2, 3, 1, 1, 4];
         let r = Solution::can_jump(nums);
         assert_eq!(true, r);
-
     }
 }

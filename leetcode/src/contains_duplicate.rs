@@ -22,5 +22,4 @@ mod test {
         let result = Solution::contains_duplicate(nums);
         assert_eq!(true, result)
     }
-
 }

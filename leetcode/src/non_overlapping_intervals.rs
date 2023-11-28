@@ -1,11 +1,9 @@
 use std::future::IntoFuture;
 
-
 struct Solution;
 
 impl Solution {
     pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {
-
         if intervals.is_empty() {
             return 0;
         }
@@ -23,6 +21,6 @@ impl Solution {
             }
         }
 
-        (n-count) as i32
+        (n - count) as i32
     }
 }

@@ -2,7 +2,7 @@ struct Solution;
 
 impl Solution {
     pub fn video_stitching(clips: Vec<Vec<i32>>, time: i32) -> i32 {
-        let mut nums  = vec![0; time as usize];
+        let mut nums = vec![0; time as usize];
         for clip in clips.into_iter() {
             if clip[0] < time {
                 nums[clip[0] as usize] = nums[clip[0] as usize].max(clip[1]);

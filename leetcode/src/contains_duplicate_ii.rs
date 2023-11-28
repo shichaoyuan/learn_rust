@@ -25,5 +25,4 @@ mod test {
         let result = Solution::contains_nearby_duplicate(nums, 3);
         assert_eq!(true, result)
     }
-
 }

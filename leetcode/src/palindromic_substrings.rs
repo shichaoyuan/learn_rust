@@ -5,7 +5,7 @@ impl Solution {
         let mut result = 0_i32;
         let chars: Vec<char> = s.chars().collect();
         let n = chars.len();
-        for k in 0..(n*2-1) {
+        for k in 0..(n * 2 - 1) {
             let mut i = k / 2;
             let mut j = k / 2 + k % 2;
             while chars[i] == chars[j] {
@@ -17,7 +17,7 @@ impl Solution {
                     break;
                 }
 
-                if j < (n-1) {
+                if j < (n - 1) {
                     j += 1;
                 } else {
                     break;
@@ -38,5 +38,4 @@ mod test {
         let r = Solution::count_substrings(s);
         assert_eq!(6, r)
     }
-
 }

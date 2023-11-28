@@ -1,4 +1,3 @@
-
 struct Solution;
 
 struct Combinator {
@@ -6,7 +5,7 @@ struct Combinator {
     target: i32,
     sum: i32,
     track: Vec<i32>,
-    result: Vec<Vec<i32>>
+    result: Vec<Vec<i32>>,
 }
 
 impl Combinator {
@@ -26,20 +25,15 @@ impl Combinator {
         }
 
         for i in start..self.candicates.len() {
-            if i > start && self.candicates[i] == self.candicates[i-1] {
+            if i > start && self.candicates[i] == self.candicates[i - 1] {
                 continue;
             }
             self.sum += self.candicates[i];
             self.track.push(self.candicates[i]);
-            self.backtrack(i+1);
+            self.backtrack(i + 1);
             self.sum -= self.candicates[i];
             self.track.pop();
-
         }
-
-
-
-
     }
 }
 
@@ -48,16 +42,15 @@ impl Solution {
         let mut candidates = candidates;
         candidates.sort_unstable();
         let mut combinator = Combinator {
-             candicates: candidates,
-             target: target,
-             sum: 0,
-             track: Vec::new(),
-             result: Vec::new()
+            candicates: candidates,
+            target: target,
+            sum: 0,
+            track: Vec::new(),
+            result: Vec::new(),
         };
 
         combinator.combination_sum()
     }
-
 }
 
 #[cfg(test)]
@@ -66,14 +59,9 @@ mod test {
 
     #[test]
     fn basic() {
-        assert_eq!(Solution::combination_sum2(
-            vec![10,1,2,7,6,1,5], 8),
-            vec![
-                vec![1,1,6],
-                vec![1,2,5],
-                vec![1,7],
-                vec![2,6]
-            ]
+        assert_eq!(
+            Solution::combination_sum2(vec![10, 1, 2, 7, 6, 1, 5], 8),
+            vec![vec![1, 1, 6], vec![1, 2, 5], vec![1, 7], vec![2, 6]]
         );
     }
 }

@@ -3,9 +3,13 @@ use std::future::IntoFuture;
 struct Solution;
 
 impl Solution {
-    pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, index_diff: i32, value_diff: i32) -> bool {
-        use std::ops::Bound::Unbounded;
+    pub fn contains_nearby_almost_duplicate(
+        nums: Vec<i32>,
+        index_diff: i32,
+        value_diff: i32,
+    ) -> bool {
         use std::ops::Bound::Included;
+        use std::ops::Bound::Unbounded;
         let mut set = std::collections::BTreeSet::new();
         for i in 0..nums.len() {
             let num = nums[i];
@@ -15,20 +19,20 @@ impl Solution {
                 Some(a) => {
                     if num - *a <= value_diff {
                         return true;
-                    } 
-                },
-                None => ()
+                    }
+                }
+                None => (),
             }
             match upper {
                 Some(a) => {
-                    if *a -num <= value_diff {
+                    if *a - num <= value_diff {
                         return true;
-                    } 
-                },
-                None => ()
+                    }
+                }
+                None => (),
             }
             if i >= index_diff as usize {
-                set.remove(&nums[i-(index_diff as usize)]);
+                set.remove(&nums[i - (index_diff as usize)]);
             }
             set.insert(num);
         }
@@ -45,5 +49,4 @@ mod test {
         let result = Solution::contains_nearby_almost_duplicate(nums, 3, 0);
         assert_eq!(true, result)
     }
-
 }

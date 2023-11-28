@@ -1,4 +1,3 @@
-
 struct Solution;
 
 impl Solution {
@@ -6,7 +5,7 @@ impl Solution {
         let n = nums.len();
         let mut stack = Vec::with_capacity(n);
         let mut result: Vec<i32> = vec![-1; n];
-        for i in (0..(n*2)).rev() {
+        for i in (0..(n * 2)).rev() {
             let j = i % n;
             while let Some(&a) = stack.last() {
                 if a <= nums[j] {
@@ -33,10 +32,8 @@ mod test {
 
     #[test]
     fn test() {
-        let nums = [1,2,3,4,3].to_vec();
+        let nums = [1, 2, 3, 4, 3].to_vec();
         let result = Solution::next_greater_elements(nums);
-        assert_eq!([2,3,4,-1,4].to_vec(), result)
-
+        assert_eq!([2, 3, 4, -1, 4].to_vec(), result)
     }
-
 }
