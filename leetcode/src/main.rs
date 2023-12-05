@@ -21,6 +21,8 @@ mod palindromic_substrings;
 mod two_sum;
 mod valid_palindrome;
 mod video_stitching;
+mod insert_delete_getrandom_o1;
+mod random_pick_with_blacklist;
 
 fn main() {
     println!("hello leetcode");
