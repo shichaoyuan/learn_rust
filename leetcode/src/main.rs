@@ -23,6 +23,7 @@ mod valid_palindrome;
 mod video_stitching;
 mod insert_delete_getrandom_o1;
 mod random_pick_with_blacklist;
+mod all_paths_from_source_to_target;
 
 fn main() {
     println!("hello leetcode");
