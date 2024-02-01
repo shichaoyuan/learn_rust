@@ -26,6 +26,9 @@ mod random_pick_with_blacklist;
 mod all_paths_from_source_to_target;
 mod surrounded_regions;
 mod min_cost_to_connect_all_points;
+mod subsets;
+mod subsets_ii;
+mod combinations;
 
 struct UF {
     count: usize,
